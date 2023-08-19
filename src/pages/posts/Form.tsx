@@ -7,7 +7,6 @@ import { useAuthState } from "react-firebase-hooks/auth"
 import { useNavigate } from "react-router-dom"
 
 interface NewFormData {
-    title : string
     description : string
   }
 
@@ -17,7 +16,6 @@ export const NewForm = () => {
     const navigate = useNavigate()
 
     const schema = yup.object().shape({
-        title: yup.string().required("Add title"),
         description: yup.string().required("Add description"),
     })
 
@@ -25,11 +23,10 @@ export const NewForm = () => {
         resolver: yupResolver(schema)
     })
 
-    const postReference = collection(db, "post")
+    const postRef = collection(db, "post")
 
     const onNewPost = async (data: NewFormData) => {
-        await addDoc(postReference, {
-            title : data.title,
+        await addDoc(postRef, {
             description : data.description,
             username : user?.displayName,
             userId : user?.uid,
@@ -42,9 +39,7 @@ export const NewForm = () => {
 
     return (
         <form onSubmit={handleSubmit(onNewPost)} >
-            <input placeholder="Title" {...register("title")}/>
-            <p style={{ color: "red" }}> {errors.title?.message}</p>
-            <input placeholder="Description" {...register("description")}/>
+            <input placeholder="New Post" {...register("description")}/>
             <p style={{ color: "red" }}> {errors.description?.message} </p>
             <input type="submit" className="form-submit"/>
         </form>

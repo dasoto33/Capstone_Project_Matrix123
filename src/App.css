@@ -15,15 +15,16 @@ body {
 .navbar {
   width: 100%;
   height: 80px;
-  background-color: rgb(20, 49, 77);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+  background-color: #14314D;
 }
 
 .navbar .links {
+  display: flex;
   text-align: center;
-  margin-right: 50px;
+  gap: 20px;
 }
 
 .links a {
@@ -36,9 +37,8 @@ body {
 
 .navbar .user {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  margin-right: 50px;
+  gap: 10px;
 }
 
 .user p {
@@ -58,12 +58,95 @@ body {
   justify-content: center;
 }
 
+.post-container {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px;
+  background-image: radial-gradient( rgb(54, 95, 126), rgb(135, 135, 178));
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 .form-submit:hover {
   cursor: pointer;
 }
 
 .logout-button {
-  margin-left: 20px;
+  margin-right: 20px;
+  background-color: transparent;
+  border: none;
+  color: white
+}
+
+.search-header {
+  color: white;
+}
+
+.center-form h2 {
+  color: #FAF9F6;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+}
+
+.signin h2 {
+  color: #FAF9F6;
+}
+
+.search-input {
+  padding: 10px;
+  border: 2px solid #8BC6EC;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-button {
+  background-color: #8BC6EC;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.search-button:hover {
+  background-color: #4CA1AF;
+}
+
+.event-item {
+  border: 2px solid #8BC6EC;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-image: radial-gradient(#00b4db, #0083b0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* .event-title {
+  font-size: 25px;
+  margin-bottom: 5px;
+} */
+
+.email-signin {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.google-signin {
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.event-date {
+  color: #777;
 }
 
 input, textarea {
@@ -72,7 +155,7 @@ input, textarea {
   background-color: rgba(222, 239, 248, 0.877);
   border: 0px transparent;
   border-radius: 5px;
-  color: rgb(97, 4, 184);
+  color: rgb(12, 34, 35);
   font-size: 16px;
   z-index: 1;
 }
@@ -86,6 +169,6 @@ form {
   border-radius: 7px;
   background-color: white;
   backdrop-filter: blur(5px);
-  background-color: rgb(58, 69, 84);
+  background-color: rgb(43, 78, 104);
   overflow: hidden;
 }

@@ -13,23 +13,25 @@ export const Navbar = () => {
       <div className="navbar">
          <div className="links">
             <NavLink to="/"> Wonky </NavLink>
-            <NavLink to="Events"> Events </NavLink>
+            <NavLink to="/Events"> Events </NavLink>
             {!user ? (
-               <NavLink to="Signin"> Sign In </NavLink>
+               <NavLink to="/Signin"> Sign In </NavLink>
+
             ) : (
-               <NavLink to="Post"> New Post </NavLink>
+               <NavLink to="/Post"> New Post </NavLink>
             )}
          </div>
         <div className="user">
          {user && (
             <>
-            <p> {user?.displayName} </p>
-            <img src={user?.photoURL || ""} width="45" height="45" />
-            <button onClick={logout} className="logout-button"> Log Out </button>
+               <NavLink to="/Profile" className="profile-link">
+                  <p>{user.displayName}</p>
+               </NavLink>
+               <img src={user.photoURL || ''} width="45" height="45" />
+               <button onClick={logout} className="logout-button"> Log Out </button>
             </>
          )}
-        </div>
       </div>
-
+    </div>
     )
 }
